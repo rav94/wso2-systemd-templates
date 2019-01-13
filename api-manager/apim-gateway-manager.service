@@ -1,0 +1,17 @@
+[Unit]
+Description=WSO2 APIM Gateway Manager Service
+Requires=network.target
+After=network.target
+
+[Service]
+Environment=JAVA_HOME=/home/ubuntu/jdk1.8.0_131
+ExecStart=/bin/bash -c "sh /home/ubuntu/apim/wso2am-2.5.0/bin/wso2server.sh"
+ExecStop=/bin/bash -c "sh /home/ubuntu/apim/wso2am-2.5.0/bin/wso2server.sh stop"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
